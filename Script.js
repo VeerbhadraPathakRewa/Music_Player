@@ -8,7 +8,7 @@ let mastersongname = document.getElementById('mastersongname');
 
 
 let audioElement = new Audio('Song/1.mp3');
-let song = [
+let Song = [
     { SongName: "Ram ko dekh kar", filePath: "Song/1.mp3", coverPath: "Meadiafile/1.jpg" },
     { SongName: "Kabhi sham Dhale to ", filePath: "Song/2.mp3", coverPath: "Meadiafile/1.jpg" },
     { SongName: "Jo Prem gali me", filePath: "Song/3.mp3", coverPath: "Meadiafile/1.jpg" },
@@ -59,18 +59,18 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
     element.addEventListener('click', (e) => {
         // console.log(e.target)
         makeallplays();
-        songIndex =parseInt(e.target.id);
+        songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-circle-play');
         e.target.classList.add('fa-circle-pause');
-        audioElement.src=`song/${songIndex+1}.mp3`;
+        audioElement.src = `Song/${songIndex + 1}.mp3`;
         mastersongname.innerText = song[songIndex].SongName;
-        audioElement.currentTime=0;
+        audioElement.currentTime = 0;
         audioElement.play();
         masterplay.classList.remove('fa-circle-play');
         masterplay.classList.add('fa-circle-pause');
         masterplay.classList.remove('fa-circle-play');
-        masterplay.classList.add('fa-circle-pause');  
-        gif.style.opacity = 1;  
+        masterplay.classList.add('fa-circle-pause');
+        gif.style.opacity = 1;
     })
 
 });
@@ -79,32 +79,32 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         console.log(e);
     })
 })
-document.getElementById('next').addEventListener('click',()=>{
-    if(songIndex>=7){
-        songIndex =0;
-    }else{
-        songIndex +=1;
+document.getElementById('next').addEventListener('click', () => {
+    if (songIndex >= 7) {
+        songIndex = 0;
+    } else {
+        songIndex += 1;
     }
-        audioElement.src=`song/${songIndex+1}.mp3`;
-        mastersongname.innerText = song[songIndex].SongName;
-        audioElement.currentTime=0;
-        audioElement.play();
-        masterplay.classList.remove('fa-circle-play');
-        masterplay.classList.add('fa-circle-pause');
-        gif.style.opacity = 1;  
+    audioElement.src = `Song/${songIndex + 1}.mp3`;
+    mastersongname.innerText = Song[songIndex].SongName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove('fa-circle-play');
+    masterplay.classList.add('fa-circle-pause');
+    gif.style.opacity = 1;
 })
-document.getElementById('previous').addEventListener('click',()=>{
-    if(songIndex<=0){
-        songIndex=1;
-    }else{
-        songIndex-=1;
+document.getElementById('previous').addEventListener('click', () => {
+    if (songIndex <= 0) {
+        songIndex = 1;
+    } else {
+        songIndex -= 1;
     }
-        audioElement.src=`song/${songIndex+1}.mp3`;
-        mastersongname.innerText = song[songIndex].SongName;
-        audioElement.currentTime=0;
-        audioElement.play();
-        masterplay.classList.remove('fa-circle-play');
-        masterplay.classList.add('fa-circle-pause');
-        gif.style.opacity = 1;  
+    audioElement.src = `Song/${songIndex + 1}.mp3`;
+    mastersongname.innerText = Song[songIndex].SongName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterplay.classList.remove('fa-circle-play');
+    masterplay.classList.add('fa-circle-pause');
+    gif.style.opacity = 1;
 })
 
