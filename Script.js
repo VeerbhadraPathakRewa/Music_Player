@@ -7,7 +7,7 @@ let gif = document.getElementById('gif');
 let mastersongname = document.getElementById('mastersongname');
 
 
-let audioElement = new Audio('song/1.mp3');
+let audioElement = new Audio('Song/1.mp3');
 let song = [
     { SongName: "Ram ko dekh kar", filePath: "Song/1.mp3", coverPath: "Meadiafile/1.jpg" },
     { SongName: "Kabhi sham Dhale to ", filePath: "Song/2.mp3", coverPath: "Meadiafile/1.jpg" },
